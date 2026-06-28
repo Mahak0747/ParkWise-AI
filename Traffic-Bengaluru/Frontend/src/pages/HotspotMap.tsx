@@ -109,7 +109,7 @@ export default function HotspotMap() {
       <div className="flex items-center justify-between flex-shrink-0">
         <div>
           <h1 className="text-xl font-semibold text-white flex items-center gap-2">
-            <MapPin size={18} className="text-accent" />
+            <MapPin size={18} className="text-accent " />
             Illegal Parking Hotspot Map
           </h1>
           <p className="text-slate-500 text-sm mt-1">
