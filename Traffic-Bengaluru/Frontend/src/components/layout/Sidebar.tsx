@@ -93,9 +93,9 @@ export default function Sidebar() {
       <div className="px-5 py-4 border-t border-white/5">
         <div className="flex items-center gap-2">
           <Activity size={12} className="text-slate-600" />
-          <span className="text-slate-600 text-xs font-mono">v0.1.0 · Phase 3</span>
+          <span className="text-slate-600 text-xs font-mono">v0.1.0 · Phase 1</span>
         </div>
-        <p className="text-slate-700 text-xs mt-1">© 2024 Bengaluru Traffic Police</p>
+        <p className="text-slate-700 text-xs mt-1">© Bengaluru Traffic Police</p>
       </div>
     </motion.aside>
   )
