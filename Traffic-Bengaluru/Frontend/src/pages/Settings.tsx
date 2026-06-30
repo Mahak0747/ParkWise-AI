@@ -148,11 +148,10 @@ export default function Settings() {
           ].map(({ method, path, desc }) => (
             <div key={path} className="flex items-center gap-3 py-2 border-b border-white/5 last:border-0">
               <span
-                className={`text-xs font-mono font-bold px-2 py-0.5 rounded ${
-                  method === 'POST'
+                className={`text-xs font-mono font-bold px-2 py-0.5 rounded ${method === 'POST'
                     ? 'bg-high/20 text-high'
                     : 'bg-low/20 text-low'
-                }`}
+                  }`}
               >
                 {method}
               </span>

@@ -26,9 +26,9 @@ export default function Sidebar() {
   return (
     <motion.aside
 
-      initial={{ x:-20, opacity:0 }}
-      animate={{ x:0, opacity:1 }}
-      transition={{ duration:0.4 }}
+      initial={{ x: -20, opacity: 0 }}
+      animate={{ x: 0, opacity: 1 }}
+      transition={{ duration: 0.4 }}
 
       className="
       flex-shrink-0 
@@ -40,8 +40,8 @@ export default function Sidebar() {
       "
 
       style={{
-        background:'rgba(15,23,42,0.95)',
-        borderRight:'1px solid rgba(255,255,255,0.05)',
+        background: 'rgba(15,23,42,0.95)',
+        borderRight: '1px solid rgba(255,255,255,0.05)',
       }}
 
     >
@@ -82,7 +82,7 @@ export default function Sidebar() {
 
 
         {
-          navItems.map(({to, icon:Icon, label, end}) => (
+          navItems.map(({ to, icon: Icon, label, end }) => (
 
             <NavLink
 
@@ -90,10 +90,10 @@ export default function Sidebar() {
               to={to}
               end={end}
 
-              className={({isActive}) =>
-              `
+              className={({ isActive }) =>
+                `
               nav-item
-              ${isActive ? 'active':''}
+              ${isActive ? 'active' : ''}
               justify-center
               md:justify-start
               `
@@ -102,7 +102,7 @@ export default function Sidebar() {
             >
 
               {
-                ({isActive}) => (
+                ({ isActive }) => (
 
                   <>
 
@@ -113,9 +113,9 @@ export default function Sidebar() {
 
                       className={`
                       flex-shrink-0
-                      ${isActive 
-                      ? 'text-accent'
-                      : 'text-slate-500'}
+                      ${isActive
+                          ? 'text-accent'
+                          : 'text-slate-500'}
                       `}
 
                     />
@@ -195,7 +195,7 @@ export default function Sidebar() {
 
         <div className="flex items-center gap-2">
 
-          <Activity 
+          <Activity
             size={12}
             className="text-slate-600"
           />

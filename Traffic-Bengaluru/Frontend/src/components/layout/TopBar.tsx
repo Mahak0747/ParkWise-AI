@@ -4,34 +4,34 @@ import { motion } from 'framer-motion'
 
 export default function TopBar() {
 
-  const [time,setTime] = useState(new Date())
+  const [time, setTime] = useState(new Date())
 
-  useEffect(()=>{
-    const timer=setInterval(()=>setTime(new Date()),1000)
-    return ()=>clearInterval(timer)
-  },[])
+  useEffect(() => {
+    const timer = setInterval(() => setTime(new Date()), 1000)
+    return () => clearInterval(timer)
+  }, [])
 
 
-  const formatted=time.toLocaleTimeString(
+  const formatted = time.toLocaleTimeString(
     'en-IN',
     {
-      hour:'2-digit',
-      minute:'2-digit',
-      second:'2-digit',
-      hour12:false,
-      timeZone:'Asia/Kolkata'
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit',
+      hour12: false,
+      timeZone: 'Asia/Kolkata'
     }
   )
 
 
-  const dateFormatted=time.toLocaleDateString(
+  const dateFormatted = time.toLocaleDateString(
     'en-IN',
     {
-      weekday:'short',
-      day:'2-digit',
-      month:'short',
-      year:'numeric',
-      timeZone:'Asia/Kolkata'
+      weekday: 'short',
+      day: '2-digit',
+      month: 'short',
+      year: 'numeric',
+      timeZone: 'Asia/Kolkata'
     }
   )
 
@@ -41,9 +41,9 @@ export default function TopBar() {
     <header
       className="flex items-center justify-between px-4 md:px-6 py-3 flex-shrink-0"
       style={{
-        background:'rgba(15,23,42,0.8)',
-        backdropFilter:'blur(12px)',
-        borderBottom:'1px solid rgba(255,255,255,0.05)'
+        background: 'rgba(15,23,42,0.8)',
+        backdropFilter: 'blur(12px)',
+        borderBottom: '1px solid rgba(255,255,255,0.05)'
       }}
     >
 
@@ -51,8 +51,8 @@ export default function TopBar() {
       {/* Brand Section */}
 
       <motion.div
-        initial={{opacity:0}}
-        animate={{opacity:1}}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
         className="flex items-center gap-3"
       >
 
@@ -61,10 +61,10 @@ export default function TopBar() {
           <div
             className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0"
             style={{
-              background:'linear-gradient(135deg,#3B82F6,#1D4ED8)'
+              background: 'linear-gradient(135deg,#3B82F6,#1D4ED8)'
             }}
           >
-            <Shield size={18} className="text-white"/>
+            <Shield size={18} className="text-white" />
           </div>
 
 
@@ -87,16 +87,16 @@ export default function TopBar() {
 
         {/* System Status only desktop */}
 
-        <div className="hidden md:block h-8 w-px bg-white/10"/>
+        <div className="hidden md:block h-8 w-px bg-white/10" />
 
 
         <div className="hidden md:flex items-center gap-2">
 
           <span className="relative flex h-2 w-2">
 
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-low opacity-75"/>
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-low opacity-75" />
 
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-low"/>
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-low" />
 
           </span>
 
@@ -169,9 +169,9 @@ export default function TopBar() {
 
           <button className="relative p-2 rounded-lg bg-white/5 border border-white/10">
 
-            <Bell size={15} className="text-slate-400"/>
+            <Bell size={15} className="text-slate-400" />
 
-            <span className="absolute top-1 right-1 w-2 h-2 bg-critical rounded-full"/>
+            <span className="absolute top-1 right-1 w-2 h-2 bg-critical rounded-full" />
 
           </button>
 
@@ -183,7 +183,7 @@ export default function TopBar() {
 
             <div className="w-6 h-6 rounded-full bg-gradient-to-br from-accent to-blue-700 flex items-center justify-center">
 
-              <User size={12} className="text-white"/>
+              <User size={12} className="text-white" />
 
             </div>
 

@@ -69,10 +69,10 @@ export default function Analytics() {
       h.hour === 0
         ? '12am'
         : h.hour < 12
-        ? `${h.hour}am`
-        : h.hour === 12
-        ? '12pm'
-        : `${h.hour - 12}pm`,
+          ? `${h.hour}am`
+          : h.hour === 12
+            ? '12pm'
+            : `${h.hour - 12}pm`,
   }))
 
   return (
