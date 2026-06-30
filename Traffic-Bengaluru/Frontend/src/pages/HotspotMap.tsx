@@ -104,7 +104,7 @@ export default function HotspotMap() {
   if (error) return <ErrorState message={error} />
 
   return (
-    <div className="h-full flex flex-col gap-4">
+    <div className="min-h-full flex flex-col gap-4">
       {/* Header */}
       <div className="flex items-center justify-between flex-shrink-0">
         <div>
@@ -117,7 +117,7 @@ export default function HotspotMap() {
           </p>
         </div>
         {/* Severity filter */}
-        <div className="flex items-center gap-2">
+        <div className="hidden md:flex items-center gap-2">
           <Filter size={13} className="text-slate-500" />
           {SEVERITIES.map((s) => (
             <button
@@ -134,11 +134,35 @@ export default function HotspotMap() {
           ))}
         </div>
       </div>
+{/* Mobile Severity Filter */}
+<div className="md:hidden glass p-3">
+  <div className="flex items-center gap-2 mb-3">
+    <Filter size={13} className="text-slate-500" />
+    <span className="text-xs text-white font-semibold">
+      Filter Severity
+    </span>
+  </div>
 
+  <div className="flex flex-wrap gap-2">
+    {SEVERITIES.map((s) => (
+      <button
+        key={s}
+        onClick={() => setSeverityFilter(s)}
+        className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all border ${
+          severityFilter === s
+            ? 'bg-accent/20 text-accent border-accent/40'
+            : 'bg-white/5 text-slate-400 border-white/10 hover:bg-white/10'
+        }`}
+      >
+        {s}
+      </button>
+    ))}
+  </div>
+</div>
       {/* Main layout: map + side panel */}
-      <div className="flex gap-4 flex-1 min-h-0">
+      <div className="flex flex-col md:flex-row gap-4">
         {/* Map */}
-        <div className="flex-1 rounded-xl overflow-hidden border border-white/8 relative">
+        <div className="w-full md:flex-1 h-[350px] md:h-auto rounded-xl overflow-hidden border border-white/8 relative">
           <MapContainer
             center={BENGALURU_CENTER}
             zoom={12}
@@ -151,7 +175,7 @@ export default function HotspotMap() {
             />
             <HotspotMarkers hotspots={filtered} onSelect={setSelected} />
           </MapContainer>
-
+          
           {/* Map overlay stats */}
           <div className="absolute top-3 left-3 glass p-3 z-[1000] space-y-1 text-xs">
             {(['Critical', 'High', 'Medium', 'Low'] as const).map((s) => {
@@ -169,9 +193,9 @@ export default function HotspotMap() {
             })}
           </div>
         </div>
-
+        
         {/* Side panel: top hotspots */}
-        <div className="w-72 flex flex-col gap-3 overflow-y-auto">
+        <div className="w-full md:w-72 flex flex-col gap-3">
           <div className="glass p-3 flex-shrink-0">
             <p className="text-xs font-semibold text-white mb-1 flex items-center gap-2">
               <Target size={13} className="text-critical" />
@@ -221,7 +245,7 @@ export default function HotspotMap() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 20 }}
-            className="fixed bottom-6 left-80 right-8 z-50 glass-strong p-5"
+            className="fixed bottom-4 left-4 right-4 md:left-80 md:right-8 z-[9999] glass-strong p-5"
             style={{ maxWidth: '640px' }}
           >
             <div className="flex items-start justify-between mb-4">
@@ -239,7 +263,7 @@ export default function HotspotMap() {
                 <X size={14} className="text-slate-400" />
               </button>
             </div>
-            <div className="grid grid-cols-4 gap-4 mb-4">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4">
               {[
                 { label: 'Violations', value: selected.violation_count.toLocaleString('en-IN') },
                 { label: 'Confidence', value: `${(selected.confidence * 100).toFixed(1)}%` },
