@@ -7,7 +7,9 @@
     box-sizing: border-box;
   }
 
-  html, body, #root {
+  html,
+  body,
+  #root {
     height: 100%;
     background-color: #0B1120;
     color: #E2E8F0;
@@ -20,13 +22,16 @@
     width: 4px;
     height: 4px;
   }
+
   ::-webkit-scrollbar-track {
     background: #0B1120;
   }
+
   ::-webkit-scrollbar-thumb {
     background: #334155;
     border-radius: 2px;
   }
+
   ::-webkit-scrollbar-thumb:hover {
     background: #475569;
   }
@@ -84,9 +89,9 @@
 .leaflet-popup-content-wrapper {
   background: #1E293B !important;
   color: #E2E8F0 !important;
-  border: 1px solid rgba(255,255,255,0.08);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 10px !important;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.5) !important;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5) !important;
 }
 
 .leaflet-popup-tip {
@@ -106,7 +111,7 @@
   font-weight: 700;
   font-size: 10px;
   color: white;
-  box-shadow: 0 0 0 2px rgba(255,255,255,0.15), 0 4px 16px rgba(0,0,0,0.4);
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.15), 0 4px 16px rgba(0, 0, 0, 0.4);
   cursor: pointer;
   transition: transform 0.2s ease;
 }
@@ -117,6 +122,6 @@
 
 .recharts-tooltip-wrapper .recharts-default-tooltip {
   background: #1E293B !important;
-  border: 1px solid rgba(255,255,255,0.1) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
   border-radius: 8px !important;
 }

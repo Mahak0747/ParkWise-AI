@@ -123,42 +123,40 @@ export default function HotspotMap() {
             <button
               key={s}
               onClick={() => setSeverityFilter(s)}
-              className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all border ${
-                severityFilter === s
+              className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all border ${severityFilter === s
                   ? 'bg-accent/20 text-accent border-accent/40'
                   : 'bg-white/5 text-slate-400 border-white/10 hover:bg-white/10'
-              }`}
+                }`}
             >
               {s}
             </button>
           ))}
         </div>
       </div>
-{/* Mobile Severity Filter */}
-<div className="md:hidden glass p-3">
-  <div className="flex items-center gap-2 mb-3">
-    <Filter size={13} className="text-slate-500" />
-    <span className="text-xs text-white font-semibold">
-      Filter Severity
-    </span>
-  </div>
+      {/* Mobile Severity Filter */}
+      <div className="md:hidden glass p-3">
+        <div className="flex items-center gap-2 mb-3">
+          <Filter size={13} className="text-slate-500" />
+          <span className="text-xs text-white font-semibold">
+            Filter Severity
+          </span>
+        </div>
 
-  <div className="flex flex-wrap gap-2">
-    {SEVERITIES.map((s) => (
-      <button
-        key={s}
-        onClick={() => setSeverityFilter(s)}
-        className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all border ${
-          severityFilter === s
-            ? 'bg-accent/20 text-accent border-accent/40'
-            : 'bg-white/5 text-slate-400 border-white/10 hover:bg-white/10'
-        }`}
-      >
-        {s}
-      </button>
-    ))}
-  </div>
-</div>
+        <div className="flex flex-wrap gap-2">
+          {SEVERITIES.map((s) => (
+            <button
+              key={s}
+              onClick={() => setSeverityFilter(s)}
+              className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all border ${severityFilter === s
+                  ? 'bg-accent/20 text-accent border-accent/40'
+                  : 'bg-white/5 text-slate-400 border-white/10 hover:bg-white/10'
+                }`}
+            >
+              {s}
+            </button>
+          ))}
+        </div>
+      </div>
       {/* Main layout: map + side panel */}
       <div className="flex flex-col md:flex-row gap-4">
         {/* Map */}
@@ -175,7 +173,7 @@ export default function HotspotMap() {
             />
             <HotspotMarkers hotspots={filtered} onSelect={setSelected} />
           </MapContainer>
-          
+
           {/* Map overlay stats */}
           <div className="absolute top-3 left-3 glass p-3 z-[1000] space-y-1 text-xs">
             {(['Critical', 'High', 'Medium', 'Low'] as const).map((s) => {
@@ -193,7 +191,7 @@ export default function HotspotMap() {
             })}
           </div>
         </div>
-        
+
         {/* Side panel: top hotspots */}
         <div className="w-full md:w-72 flex flex-col gap-3">
           <div className="glass p-3 flex-shrink-0">
@@ -210,9 +208,8 @@ export default function HotspotMap() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: i * 0.04 }}
               onClick={() => setSelected(h)}
-              className={`glass p-3 cursor-pointer hover:border-white/15 transition-all ${
-                selected?.hotspot_id === h.hotspot_id ? 'border-accent/40 bg-accent/5' : ''
-              }`}
+              className={`glass p-3 cursor-pointer hover:border-white/15 transition-all ${selected?.hotspot_id === h.hotspot_id ? 'border-accent/40 bg-accent/5' : ''
+                }`}
             >
               <div className="flex items-start justify-between mb-2">
                 <div className="flex items-center gap-2">
