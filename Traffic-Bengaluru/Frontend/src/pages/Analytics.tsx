@@ -23,15 +23,16 @@ import { GlassCard, LoadingSpinner, ErrorState } from '../components/cards/Share
 const CHART_COLORS = ['#3B82F6', '#22C55E', '#F97316', '#EF4444', '#FACC15', '#A78BFA']
 
 const tooltipStyle = {
-  contentStyle: {
-    background: '#1E293B',
-    border: '1px solid rgba(255,255,255,0.08)',
-    borderRadius: '8px',
-    color: '#E2E8F0',
+  labelStyle: {
+    color: '#94A3B8',
+    fontSize: '12px',
+    fontWeight: 500,
+  },
+  itemStyle: {
+    color: '#3B82F6',
     fontSize: '12px',
   },
-  labelStyle: { color: '#94A3B8' },
-}
+};
 
 export default function Analytics() {
   const [data, setData] = useState<AnalyticsResponse | null>(null)
@@ -78,7 +79,7 @@ export default function Analytics() {
     <div className="space-y-6">
       <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
         <h1 className="text-xl font-semibold text-white flex items-center gap-2">
-          <BarChart3 size={18} className="text-accent" />
+          <BarChart3 size={18} className="text-accent flex-shrink-0" />
           Violation Analytics
         </h1>
         <p className="text-slate-500 text-sm mt-1">
@@ -177,7 +178,7 @@ export default function Analytics() {
           <BarChart
             data={topStations}
             layout="vertical"
-            margin={{ top: 5, right: 60, bottom: 5, left: 10 }}
+            margin={{ top: 5, right: 10, bottom: 5, left: 0 }}
           >
             <XAxis
               type="number"
@@ -192,7 +193,7 @@ export default function Analytics() {
               tick={{ fill: '#94A3B8', fontSize: 11 }}
               axisLine={false}
               tickLine={false}
-              width={110}
+              width={30}
             />
             <Tooltip
               {...tooltipStyle}

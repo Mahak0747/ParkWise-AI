@@ -82,7 +82,7 @@ export default function ModelInsights() {
     <div className="space-y-6">
       <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
         <h1 className="text-xl font-semibold text-white flex items-center gap-2">
-          <Brain size={18} className="text-accent" />
+          <Brain size={18} className="text-accent flex-shrink-0" />
           Model Intelligence Insights
         </h1>
         <p className="text-slate-500 text-sm mt-1">
@@ -91,7 +91,7 @@ export default function ModelInsights() {
       </motion.div>
 
       {/* Model comparison */}
-      <div className="grid grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {MODEL_METRICS.map((m, i) => {
           const isSelected = m.Model === 'GradientBoosting'
           return (
@@ -208,7 +208,7 @@ export default function ModelInsights() {
           <ArrowRight size={14} className="text-accent" />
           <h2 className="text-sm font-semibold text-white">Severity → Enforcement Action Pipeline</h2>
         </div>
-        <div className="grid grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {SEVERITY_RULES.map((rule, i) => (
             <motion.div
               key={rule.severity}
@@ -263,7 +263,7 @@ export default function ModelInsights() {
             </div>
           ))}
         </div>
-        <div className="mt-4 grid grid-cols-3 gap-4 pt-4 border-t border-white/5">
+        <div className="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4 pt-4 border-t border-white/5">
           <StatRow label="Training Data" value="298,450 rows" />
           <StatRow label="Feature Columns" value="16" mono />
           <StatRow label="Label Classes" value="Low / Medium / High / Critical" />

@@ -104,7 +104,7 @@ export default function Dashboard() {
       >
         <div>
           <div className="flex items-center gap-2 mb-1">
-            <Shield size={18} className="text-accent" />
+            <Shield size={18} className="text-accent flex-shrink-0" />
             <h1 className="text-xl font-semibold text-white tracking-tight">
               Enforcement Command Center
             </h1>

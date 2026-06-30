@@ -171,9 +171,9 @@ export default function VehicleSearch() {
           >
             {/* Vehicle header */}
             <div className="glass p-5">
-              <div className="flex items-start justify-between mb-4">
+              <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-3 mb-4">
                 <div>
-                  <div className="flex items-center gap-3 mb-1">
+                  <div className="flex flex-wrap items-center gap-3 mb-1">
                     <span className="font-mono text-xl font-bold text-white">
                       {result.vehicle_number}
                     </span>
@@ -182,7 +182,7 @@ export default function VehicleSearch() {
                   <p className="text-slate-500 text-sm">{result.last_location}</p>
                 </div>
                 <div
-                  className="px-3 py-1.5 rounded-lg text-xs font-bold"
+                  className="px-3 py-1.5 rounded-lg text-xs font-bold w-fit max-w-full"
                   style={{
                     background: `${RISK_COLORS[result.risk_category]}15`,
                     color: RISK_COLORS[result.risk_category],
@@ -202,12 +202,12 @@ export default function VehicleSearch() {
                 </div>
                 <div>
                   <p className="text-slate-500 text-xs">Last Station</p>
-                  <p className="text-white text-sm font-medium mt-0.5">{result.last_station}</p>
+                  <p className="text-white text-sm font-medium mt-0.5 break-words">{result.last_station}</p>
                 </div>
                 <div>
                   <p className="text-slate-500 text-xs">Risk Level</p>
                   <p
-                    className="text-sm font-semibold mt-0.5"
+                    className="text-sm font-semibold mt-0.5 break-words"
                     style={{ color: RISK_COLORS[result.risk_category] }}
                   >
                     {result.risk_category}

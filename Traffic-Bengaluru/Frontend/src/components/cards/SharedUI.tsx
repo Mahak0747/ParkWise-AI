@@ -94,8 +94,8 @@ export function StatRow({ label, value, mono = false }: {
   mono?: boolean
 }) {
   return (
-    <div className="flex items-center justify-between py-2 border-b border-white/5 last:border-0">
-      <span className="text-slate-500 text-xs">{label}</span>
+    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 py-2 border-b border-white/5">
+      <span className="text-slate-500 text-xs font-medium break-words sm:text-right">{label}</span>
       <span className={`text-white text-sm font-medium ${mono ? 'font-mono' : ''}`}>{value}</span>
     </div>
   )
